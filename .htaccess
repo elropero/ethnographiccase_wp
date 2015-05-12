@@ -1,0 +1,36 @@
+# cache images and flash content for one month
+<FilesMatch ".(flv|gif|jpg|jpeg|png|ico|swf)$">
+Header set Cache-Control "max-age=2592000"
+</FilesMatch>
+
+# cache text, css, and javascript files for one week
+<FilesMatch ".(js|css|pdf|txt)$">
+Header set Cache-Control "max-age=2592000"
+</FilesMatch>
+
+# cache html and htm files for one day
+<FilesMatch ".(html|htm)$">
+Header set Cache-Control "max-age=43200"
+</FilesMatch>
+
+#RewriteEngine On 
+#RewriteCond %{HTTP_HOST}  transcriptionsforum.net$ [NC]
+#RewriteCond %1 !^transcriptions/
+#RewriteRule ^(.*)$  /transcriptions/$1 [L]
+Options +FollowSymlinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^(www.)?transcriptionsforum.net [NC]
+RewriteRule ^(.*)$ http://somatosphere.net/transcriptions$1 [L]
+
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress

@@ -1,0 +1,2 @@
+[10-Feb-2012 11:11:48] PHP Fatal error:  Call to undefined function  _deprecated_file() in /home/somatosp/public_html/wp-includes/rss-functions.php on line 8
+[10-Feb-2012 12:48:26] PHP Fatal error:  Call to undefined function  _deprecated_file() in /home/somatosp/public_html/wp-includes/rss-functions.php on line 8

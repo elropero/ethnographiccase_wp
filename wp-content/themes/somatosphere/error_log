@@ -1,0 +1,5 @@
+[17-Oct-2011 01:35:33] PHP Fatal error:  Call to undefined function  get_header() in /home/somatosp/public_html/wp-content/themes/somatosphere/index.php on line 7
+[25-Dec-2011 09:22:56] PHP Fatal error:  Call to undefined function  get_header() in /home/somatosp/public_html/wp-content/themes/somatosphere/index.php on line 7
+[30-Dec-2011 06:53:01] PHP Fatal error:  Call to undefined function  get_header() in /home/somatosp/public_html/wp-content/themes/somatosphere/index.php on line 7
+[30-Dec-2011 06:53:20] PHP Fatal error:  Call to undefined function  get_header() in /home/somatosp/public_html/wp-content/themes/somatosphere/search.php on line 7
+[30-Dec-2011 06:53:23] PHP Fatal error:  Call to undefined function  get_header() in /home/somatosp/public_html/wp-content/themes/somatosphere/index.php on line 7
