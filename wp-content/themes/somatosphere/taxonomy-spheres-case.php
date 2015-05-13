@@ -13,6 +13,10 @@ get_header(); ?>
 			<div id="content">
                 
 				<?php ethnographiccase_header(); ?>
+
+                <img src="<?php echo get_template_directory_uri(); ?>/img/ethno-mockup.png" alt="" />
+
+                
 <div id="commontiles">
 	<div id="commonhead"></div>
 	<div id="commonfoot"></div>
