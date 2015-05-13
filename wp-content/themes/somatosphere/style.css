@@ -2287,3 +2287,37 @@ div.citation_entry {
 
 /* @end */
 
+/* @group Ethnographic Case */
+
+
+/* ref: http://tympanus.net/codrops/2013/07/02/loading-effects-for-grid-items-with-css-animations/ */
+/* Effect 6: flip (based on http://lab.hakim.se/scroll-effects/ by @hakimel) */
+.grid.effect-6 {
+  -webkit-perspective: 1300px;
+  perspective: 1300px;
+}
+
+.grid.effect-6 li.animate {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+  -webkit-transform: rotateX(-80deg);
+  transform: rotateX(-80deg);
+  -webkit-animation: flip .8s ease-in-out forwards;
+  animation: flip .8s ease-in-out forwards;
+}
+
+@-webkit-keyframes flip {
+  0% { }
+  100% { -webkit-transform: rotateX(0deg); opacity: 1; }
+}
+
+@keyframes flip {
+  0% { }
+  100% { -webkit-transform: rotateX(0deg); transform: rotateX(0deg); opacity: 1; }
+}
+
+
+/* @end */
+

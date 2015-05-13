@@ -194,6 +194,19 @@ if (!current_user_can('manage_options')) {
 } 
 
 
+/**
+ *  Incorporate masonry
+ */
+if (! function_exists('slug_scripts_masonry') ) :
+if ( ! is_admin() ) :
+function slug_scripts_masonry() {
+    wp_enqueue_script('masonry');
+    wp_enqueue_style('masonry', get_template_directory_uri().'/css/');
+}
+add_action( 'wp_enqueue_scripts', 'slug_scripts_masonry' );
+endif; //! is_admin()
+endif; //! slug_scripts_masonry exists
+
 
 ?>
 <?php 
@@ -363,6 +376,8 @@ function writer_init() {
 add_action('admin_init', 'flush_rewrite_rules');
 add_action('generate_rewrite_rules', 'sphere_rewrite_rules');
 
+
+
 function sphere_rewrite_rules( $wp_rewrite )
 {
 	$new_rules = array(
@@ -376,11 +391,11 @@ function sphere_rewrite_rules( $wp_rewrite )
 		'commonplaces/page/(.+)' => 'index.php?spheres=commonplaces&paged=' .$wp_rewrite->preg_index(1),
 		'commonplaces/(.+)' => 'index.php?spheres=commonplaces&category_name=' .$wp_rewrite->preg_index(1),
 		'commonplaces' => 'index.php?spheres=commonplaces',
-        'c/ethnographiccase/page/(.+)' => 'index.php?spheres=ethnographiccase&paged=' .$wp_rewrite->preg_index(1),
+        'c/case/page/(.+)' => 'index.php?spheres=ethnographiccase&paged=' .$wp_rewrite->preg_index(1),
 		'c/(.+)/(.+)' => 'index.php?spheres=' . $wp_rewrite->preg_index(1) . '&category_name=' .$wp_rewrite->preg_index(2),
-		'ethnographiccase/page/(.+)' => 'index.php?spheres=ethnographiccase&paged=' .$wp_rewrite->preg_index(1),
-		'ethnographiccase/(.+)' => 'index.php?spheres=ethnographiccase&category_name=' .$wp_rewrite->preg_index(1),
-		'ethnographiccase' => 'index.php?spheres=ethnographiccase'
+		'case/page/(.+)' => 'index.php?spheres=ethnographiccase&paged=' .$wp_rewrite->preg_index(1),
+		'case/(.+)' => 'index.php?spheres=ethnographiccase&category_name=' .$wp_rewrite->preg_index(1),
+		'case' => 'index.php?spheres=ethnographiccase'
 	);
 	$wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
 }
