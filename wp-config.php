@@ -93,4 +93,6 @@ if ( !defined('ABSPATH') )
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
 
+/** whitelist localhost **/
+define('JETPACK_IP_ADDRESS_OK', '127.0.0.1');
 

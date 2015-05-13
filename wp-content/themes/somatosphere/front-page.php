@@ -11,6 +11,7 @@ $pid1 = 1;
 
 		<div id="primary">
 			<div id="content">
+                <h1>hi what's up!</h1>
 <?php if (is_paged()) { ?>
 				<?php get_template_part( 'loop', 'index' ); ?>
 			

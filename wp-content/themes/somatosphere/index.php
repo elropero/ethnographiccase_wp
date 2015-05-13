@@ -5,9 +5,9 @@
  */
 
 get_header(); ?>
-
 		<div id="primary">
 			<div id="content">
+<h1>here there hi hello</h1>
 
 				<?php get_template_part( 'loop', 'index' ); ?>
 
