@@ -536,20 +536,8 @@ function commonplaces_header() {
 
 function ethnographiccase_header() {
 ?>
-<header class="sphere-header">
-	<div class="aboveline">
-		<h1 class="sphere-title">
-			<a href="http://somatosphere.net/s/case">The Ethnographic Case</a>	
-		</h1>
-		<h2 class="sphere-subtitle">
-			<?php echo term_description(1091,'spheres') ?>
-		</h2>
-		<div class="sphere-back"></div>
-	</div>
-<!--	<div class="belowline">
-		<div class="sphere-tagline">Some Info</div>
-		<?php // wp_nav_menu( array( 'theme_location' => 'virosphere' ) ); ?>
-	</div>-->
+<header class="sphere-header">	
+	<a href="http://somatosphere.net/s/case"><img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/logo.png"></a>
 </header>
 <?php
 }
