@@ -364,8 +364,6 @@ function writer_init() {
 add_action('admin_init', 'flush_rewrite_rules');
 add_action('generate_rewrite_rules', 'sphere_rewrite_rules');
 
-
-
 function sphere_rewrite_rules( $wp_rewrite )
 {
 	$new_rules = array(
@@ -379,8 +377,8 @@ function sphere_rewrite_rules( $wp_rewrite )
 		'commonplaces/page/(.+)' => 'index.php?spheres=commonplaces&paged=' .$wp_rewrite->preg_index(1),
 		'commonplaces/(.+)' => 'index.php?spheres=commonplaces&category_name=' .$wp_rewrite->preg_index(1),
 		'commonplaces' => 'index.php?spheres=commonplaces',
-        's/ethnographiccase/page/(.+)' => 'index.php?spheres=ethnographiccase&paged=' .$wp_rewrite->preg_index(1),
-		's/(.+)/(.+)' => 'index.php?spheres=' . $wp_rewrite->preg_index(1) . '&category_name=' .$wp_rewrite->preg_index(2),
+		's/ethnographiccase/page/(.+)' => 'index.php?spheres=ethnographiccase&paged=' .$wp_rewrite->preg_index(1),
+		//'s/(.+)/(.+)' => 'index.php?spheres=' . $wp_rewrite->preg_index(1) . '&category_name=' .$wp_rewrite->preg_index(2),
 		'ethnographiccase/page/(.+)' => 'index.php?spheres=ethnographiccase&paged=' .$wp_rewrite->preg_index(1),
 		'ethnographiccase/(.+)' => 'index.php?spheres=ethnographiccase&category_name=' .$wp_rewrite->preg_index(1),
 		'ethnographiccase' => 'index.php?spheres=ethnographiccase'
