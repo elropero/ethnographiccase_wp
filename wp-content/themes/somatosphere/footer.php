@@ -160,29 +160,6 @@ if (is_category()) {
 <?php wp_footer(); ?>
 <!--<script src="<?php bloginfo('url'); ?>/wp-content/plugins/jetpack/modules/sharedaddy/sharing.js"></script>-->
 
-<?php 
-// Masonry
-if ( ! function_exists( 'slug_masonry_init' )) :
-function slug_masonry_init() { ?>
-<script>
-    //set the container that Masonry will be inside of in a var
-    var container = document.querySelector('#masonry-loop');
-    //create empty var msnry
-    var msnry;
-    // initialize Masonry after all images have loaded
-    imagesLoaded( container, function() {
-        msnry = new Masonry( container, {
-            itemSelector: '.masonry-entry'
-        });
-    });
-</script>
-<?php }
-//add to wp_footer
-add_action( 'wp_footer', 'slug_masonry_init' );
-endif; // ! slug_masonry_init exists
-// End Masonry
-?>
-
 
 </body>
 </html>
