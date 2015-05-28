@@ -160,6 +160,5 @@ if (is_category()) {
 <?php wp_footer(); ?>
 <!--<script src="<?php bloginfo('url'); ?>/wp-content/plugins/jetpack/modules/sharedaddy/sharing.js"></script>-->
 
-
 </body>
 </html>
