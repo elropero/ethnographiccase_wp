@@ -10,12 +10,12 @@ get_header(); ?>
 <!-- START -->
 
 
-    <style type="text/css">
+<style type="text/css">
     body {
         font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
         font-weight: 300;
     }
-    .shell {
+    .cases-container {
         width: 693px;
         position:absolute;
         right: 230px;
@@ -24,7 +24,7 @@ get_header(); ?>
     .logo {
         margin-left: 0;
     }
-        
+
     .case {
         width: 693px;
     }
@@ -96,7 +96,7 @@ get_header(); ?>
         line-height: 1.6;
     }
     .case-description .case-title {
-        
+
     }
 
 
@@ -115,104 +115,87 @@ get_header(); ?>
         width: 100px;
     }
     #white {
-		background: url("<?php echo get_template_directory_uri(); ?>/img/case_back.png") repeat-y 0 0
-    }
-    #primary {
-    	margin-left: 18px;
-    	margin-top: 130px;
-    }
+      background: url("<?php echo get_template_directory_uri(); ?>/img/case_back.png") repeat-y 0 0
+  }
+  #primary {
+   margin-left: 18px;
+   margin-top: 130px;
+}
 
-    </style>
-    
-    
-
+</style>
 
 
 
 <div id="primary" class="test">
 
-		<?php ethnographiccase_header(); ?>
+    <?php ethnographiccase_header(); ?>
 
-		 <div class="shell">
+    <div class="cases-container">
 
-<?php global $query_string; // required
-query_posts($query_string.'&post_status=any&order=ASC&posts_per_page=-1'); 
-$n = 0; ?>
+    <?php global $query_string; // required
+        query_posts($query_string.'&post_status=any&order=ASC&posts_per_page=-1'); 
+        $n = 0; 
+    ?>
 
-<?php while ( have_posts() ) : the_post(); ?>
-<?php $n++; ?>
+    <?php while ( have_posts() ) : the_post(); ?>
+    <?php $n++; ?>
 
+    <?php 
+        if(get_field('short_title')) {
+            $thetitle = get_field('short_title');
+        } else {
+            $thetitle = get_the_title();
+        }
+    ?>
 
-            <?php 
-		if(get_field('short_title')) {
-			$thetitle = get_field('short_title');
-		} else {
-			$thetitle = get_the_title();
-		}
-		?>
-		
-		<?php
-		if ( get_post_status ( ) == 'publish' ) { ?>
-			<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'themename' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
-		<?php } else { ?>
-			<a href="#">
-		<?php } ?>
-    <div class="case case-1 grid effect-6">
-        <div class="case-title">
-			<?php echo $thetitle; ?>
-        </div>
+    <?php
+        if ( get_post_status ( ) == 'publish' ) { 
+    ?>
+        <a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'themename' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
+    <?php } else { ?>
+        <a href="#">
+    <?php } ?>
+    
+            <div class="case case-<?php echo $n ?> grid effect-6">
+                <div class="case-title">
+                <?php echo $thetitle; ?>
+            </div>
 
-        <div class="bg-case-1">
-            <div class="spine"></div>
-        </div>
-    </div>
+            <div class="bg-case-1">
+                <div class="spine"></div>
+            </div>
+        </a>
+    <?php endwhile; ?>
 
     <div class="case-bottom">
     </div>
-    </a>
 
     <div class="bracket-container">
         <div class="bracket">
         </div>
     </div>
 
-<div class="grid effect-6">
     <div class="case case-description">
         <p class="case-title" style="color:black">
-        Over the next year we will bring you a series of “ethnographic cases.” To pay homage to the traditional ethnographic monograph, the pieces will be collected in an expanding bookCASE. The virtual-format of this bookCase makes evident that today’s monograph can be a very different thing than the monograph of ethnographies' past. Clicking the cases may link to straight-forward text, but you may also find yourself amidst audio or video files, photographs, artwork, and more.      
+            Over the next year we will bring you a series of “ethnographic cases.” To pay homage to the traditional ethnographic monograph, the pieces will be collected in an expanding bookCASE. The virtual-format of this bookCase makes evident that today’s monograph can be a very different thing than the monograph of ethnographies' past. Clicking the cases may link to straight-forward text, but you may also find yourself amidst audio or video files, photographs, artwork, and more.      
         </p>
     </div>
-	</div>
-</div>
-
-
-    <?php endwhile; ?>
-    
-
-	<div id="content">
-
-
-		<!--
-		<ul class="grid effect-6" id="grid">
-			<li class="animate">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/ethno-mockup.png" alt="" />
-			</li>
-		</ul>
-		-->
+</div> <!-- /cases-container -->
 
 
 
-    <!-- SVG clip paths -->
-    <svg height=0 width=0>
-      <defs>
-        <clipPath id="clip-svg-path1" clipPathUnits="objectBoundingBox">
-          <polygon points="0 0.23, 0.14 0, 1 0, 1 0.78, 0.14 0.78, 0 1" />
-        </clipPath>
-        <clipPath id="clip-svg-path-bottom" clipPathUnits="objectBoundingBox">
-          <polygon points="0.15 -0.13 0 0, 1 0, 0.88 1, 0 1, 0 0.98" />
-        </clipPath>
-      </defs>   
-    </svg> 
+
+<!-- SVG clip paths -->
+<svg height=0 width=0>
+  <defs>
+    <clipPath id="clip-svg-path1" clipPathUnits="objectBoundingBox">
+      <polygon points="0 0.23, 0.14 0, 1 0, 1 0.78, 0.14 0.78, 0 1" />
+  </clipPath>
+  <clipPath id="clip-svg-path-bottom" clipPathUnits="objectBoundingBox">
+      <polygon points="0.15 -0.13 0 0, 1 0, 0.88 1, 0 1, 0 0.98" />
+  </clipPath>
+</defs>   
+</svg> 
 
 
 
