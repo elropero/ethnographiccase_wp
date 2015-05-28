@@ -198,7 +198,7 @@ get_header(); ?>
 </svg> 
 
 
-
+<div id="content"> <!-- NOTE: This gives the content bg -->
 
 
 <?php /* if (is_paged()) { ?>
