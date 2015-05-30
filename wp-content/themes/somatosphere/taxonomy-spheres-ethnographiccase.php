@@ -52,7 +52,7 @@ get_header(); ?>
         cursor: pointer;
     }
     .bg-case-1 {
-        background-image: url("<?php echo get_template_directory_uri(); ?>/img/books.jpg");
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_books.jpg");
         -webkit-clip-path: url("#clip-svg-path1");
         clip-path: url("#clip-svg-path1");
         -webkit-clip-path: polygon(0% 23%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 100%);
@@ -89,7 +89,7 @@ get_header(); ?>
         max-width: 70%;
     }
     .case-description {
-        background-image: url("<?php echo get_template_directory_uri(); ?>/img/bottom.png");
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_bottom.png");
         background-repeat: no-repeat;
         height: 342px;
         margin-top: 300px;
@@ -102,20 +102,19 @@ get_header(); ?>
 
     .bracket-container {
         position: absolute;
-        height: 100%;
         width: 60px;
         left: 300px;
         margin-top: -57px;
         overflow:hidden;
     }
     .bracket {
-        background-image: url("<?php echo get_template_directory_uri(); ?>/img/bracket-tall.png");
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_bracket_tall.png");
         background-repeat: no-repeat;
-        height: 5000px;
+        height: 2200px;
         width: 100px;
     }
     #white {
-      background: url("<?php echo get_template_directory_uri(); ?>/img/back-case.png") repeat-y 0 0
+      background: url("<?php echo get_template_directory_uri(); ?>/img/case_back.png") repeat-y 0 0
   }
   #primary {
     margin-left: 18px;

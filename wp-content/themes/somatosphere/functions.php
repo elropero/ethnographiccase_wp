@@ -523,7 +523,7 @@ function commonplaces_header() {
 function ethnographiccase_header() {
 ?>
 <header class="sphere-header">	
-	<a href="http://somatosphere.net/ethnographiccase"><img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/logo.png"></a>
+	<a href="http://somatosphere.net/ethnographiccase"><img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/case_logo.png"></a>
 </header>
 <?php
 }
