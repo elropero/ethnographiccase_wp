@@ -61,9 +61,9 @@ get_header(); ?>
 
     .case-bottom {
         background-color: #999;
-        height: 90px;
-        margin-left: 2px;
-        width: 693px;
+        height: 91px;
+        margin-left: 1px;
+        width: 692px;
         
         -webkit-clip-path: url("#clip-svg-path-bottom");
         clip-path: url("#clip-svg-path-bottom");
@@ -73,7 +73,7 @@ get_header(); ?>
     .spine {
         position: absolute;
         background-color: #eee;
-        width: 6px;
+        width: 1px;
         height: 326px;
         left: 94px;
         z-index: 1;
@@ -115,12 +115,12 @@ get_header(); ?>
         width: 100px;
     }
     #white {
-      background: url("<?php echo get_template_directory_uri(); ?>/img/case_back.png") repeat-y 0 0
+      background: url("<?php echo get_template_directory_uri(); ?>/img/back-case.png") repeat-y 0 0
   }
   #primary {
-   margin-left: 18px;
-   margin-top: 130px;
-}
+    margin-left: 18px;
+    margin-top: 130px;
+    }
 
 </style>
 
