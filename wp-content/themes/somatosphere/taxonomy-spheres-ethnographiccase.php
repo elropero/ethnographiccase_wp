@@ -111,6 +111,7 @@ get_header(); ?>
         margin: 0;
         float: left;
         max-width: 70%;
+        pointer-events: none;
     }
     .case-description {
         background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_bottom.png");
@@ -152,9 +153,9 @@ get_header(); ?>
 
 
 
-<div id="primary" class="test">
+<div id="primary">
 
-    <?php ethnographiccase_header(); ?>
+    <?php ethnographiccase_index_header(); ?>
 
     <div class="cases-container">
 

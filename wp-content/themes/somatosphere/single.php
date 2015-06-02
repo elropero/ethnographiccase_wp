@@ -13,7 +13,7 @@ get_header(); ?>
 				<?php if (has_term('transcriptions','spheres') ) 
 					{ $thesphere = 'transcriptions'; transcription_header(); } else if (has_term('commonplaces','spheres') ) 
 					{ $thesphere = 'commonplaces'; commonplaces_header(); } else if (has_term('ethnographiccase','spheres') ) 
-					{ $thesphere = 'ethnographiccase'; ethnographiccase_header(); } else 
+					{ $thesphere = 'ethnographiccase'; ethnographiccase_post_header(); } else 
 					{ $thesphere = ''; echo $thesphere; } ?>
 				
 				<nav id="nav-above"  role="navigation">
@@ -23,14 +23,26 @@ get_header(); ?>
 				</nav><!-- #nav-above -->
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
-					<header class="entry-header">						
+					<header class="entry-header">
+						<span class="cat">
+						<?php 
+							foreach(get_the_category() as $category) { 
+								//echo "(" . $category->cat_name . ", " . $category->cat_ID . ")" . "<br/>";
+								//echo "(" . get_category_link($category->cat_ID) . ")" . "<br/>";
+						    	echo '<a href="' . get_category_link($category->cat_ID) . '" title="' . $category->cat_name . '" class="caticon cat-' . $category->cat_ID . '">' . $category->cat_name . '</a>'; 
+							} 
+						?>
+						</span>
+						
 						<div class="publishdate">
 							<?php
+							
 								printf( __( '<a href="%1$s" rel="bookmark"><time class="entry-date" datetime="%2$s">%3$s</time></a>', 'themename' ),
 									get_permalink(),
 									get_the_date( 'c' ),
 									get_the_date()
 								);
+								
 							?>
 						</div><!-- .entry-meta -->
 						<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'themename' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>

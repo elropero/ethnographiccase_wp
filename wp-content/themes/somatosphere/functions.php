@@ -516,10 +516,29 @@ function commonplaces_header() {
 </header>
 <?php
 }
-function ethnographiccase_header() {
+function ethnographiccase_index_header() {
 ?>
 <header class="sphere-header">	
 	<a href="http://somatosphere.net/ethnographiccase"><img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/case_logo.png"></a>
+</header>
+<?php
+}
+function ethnographiccase_post_header() {
+?>
+<header class="sphere-header">
+	<div class="aboveline">
+		<h1 class="sphere-title">
+			<a href="http://somatosphere.net/ethnographiccase">The Ethnographic Case</a>	
+		</h1>
+		<h2 class="sphere-subtitle">
+			<?php echo term_description(1107,'spheres') ?>
+		</h2>
+		<div class="sphere-back"></div>
+	</div>
+<!--	<div class="belowline">
+		<div class="sphere-tagline">Some Info</div>
+		<?php // wp_nav_menu( array( 'theme_location' => 'virosphere' ) ); ?>
+	</div>-->
 </header>
 <?php
 }
