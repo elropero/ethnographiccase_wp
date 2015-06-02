@@ -417,17 +417,14 @@ function term_id_class($classes) {
 	} else if (is_tax('spheres','Commonplaces')) {
 		$classes[] = 'sphere-commonplaces';
 		$classes[] = 'sphere-test';
-	}
-    else if (is_tax('spheres','The Ethnographic Case')) {
+	} else if (is_tax('spheres','The Ethnographic Case')) {
 		$classes[] = 'sphere-ethnographiccase';
 		$classes[] = 'sphere-test';
-	}
-    else if ($term1->parent == 477) {
+	} else if ($term1->parent == 477) {
 		$classes[] = 'sphere-transcriptions';
 		$classes[] = 'sphere-test2';
 	} else {
-		$classes[] = 'sphere-'.$wp_query->query_vars['spheres'];
-		
+		$classes[] = 'sphere-'.$wp_query->query_vars['spheres'];	
 	}
 	return $classes;
 }
@@ -519,7 +516,6 @@ function commonplaces_header() {
 </header>
 <?php
 }
-
 function ethnographiccase_header() {
 ?>
 <header class="sphere-header">	

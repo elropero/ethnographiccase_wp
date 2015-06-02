@@ -11,10 +11,31 @@ get_header(); ?>
 
 
 <style type="text/css">
-    body {
-        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-        font-weight: 300;
+
+    @font-face {
+        font-family: 'absarasans-boldregular';
+        src: url('<?php echo get_template_directory_uri(); ?>/fonts/absarasans-bold-webfont.eot');
+        src: url('<?php echo get_template_directory_uri(); ?>/fonts/absarasans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+        url('<?php echo get_template_directory_uri(); ?>/fonts/absarasans-bold-webfont.woff2') format('woff2'),
+        url('<?php echo get_template_directory_uri(); ?>/fonts/absarasans-bold-webfont.woff') format('woff'),
+        url('<?php echo get_template_directory_uri(); ?>/fonts/absarasans-bold-webfont.ttf') format('truetype'),
+        url('<?php echo get_template_directory_uri(); ?>/fonts/absarasans-bold-webfont.svg#absarasans-boldregular') format('svg');
+        font-weight: normal;
+        font-style: normal;
     }
+    @font-face {
+        font-family: 'absarasans-regularregular';
+        src: url('<?php echo get_template_directory_uri(); ?>/fonts/absarasans-regular-webfont.eot');
+        src: url('<?php echo get_template_directory_uri(); ?>/fonts/absarasans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('<?php echo get_template_directory_uri(); ?>/fonts/absarasans-regular-webfont.woff2') format('woff2'),
+        url('<?php echo get_template_directory_uri(); ?>/fonts/absarasans-regular-webfont.woff') format('woff'),
+        url('<?php echo get_template_directory_uri(); ?>/fonts/absarasans-regular-webfont.ttf') format('truetype'),
+        url('<?php echo get_template_directory_uri(); ?>/fonts/absarasans-regular-webfont.svg#absarasans-regularregular') format('svg');
+        font-weight: normal;
+        font-style: normal;
+
+    }
+
     .cases-container {
         width: 693px;
         position:absolute;
@@ -79,6 +100,9 @@ get_header(); ?>
         z-index: 1;
     }
     .case-title {
+        font-family: "absarasans-boldregular", myriad-pro, "Myriad Pro", sans-serif;
+        font-size: 36px;
+        line-height: 44px;
         z-index: 1;
         color: white;
         position: relative;
@@ -96,7 +120,9 @@ get_header(); ?>
         line-height: 1.6;
     }
     .case-description .case-title {
-
+        font-family: "absarasans-regularregular", myriad-pro, "Myriad Pro", sans-serif;
+        font-size: 16px;
+        line-height: 24px;
     }
 
 
@@ -110,11 +136,12 @@ get_header(); ?>
     .bracket {
         background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_bracket_tall.png");
         background-repeat: no-repeat;
-        height: 2200px;
+        height: 920px;
         width: 100px;
     }
     #white {
-      background: url("<?php echo get_template_directory_uri(); ?>/img/case_back.png") repeat-y 0 0
+      background: url("<?php echo get_template_directory_uri(); ?>/img/case_back.png") repeat-y 0 0;
+      height: 1500px;
   }
   #primary {
     margin-left: 18px;
@@ -176,7 +203,7 @@ get_header(); ?>
 
     <div class="case case-description">
         <p class="case-title" style="color:black">
-            Over the next year we will bring you a series of “ethnographic cases.” To pay homage to the traditional ethnographic monograph, the pieces will be collected in an expanding bookCASE. The virtual-format of this bookCase makes evident that today’s monograph can be a very different thing than the monograph of ethnographies' past. Clicking the cases may link to straight-forward text, but you may also find yourself amidst audio or video files, photographs, artwork, and more.      
+            To pay homage to the traditional ethnographic monograph, the pieces will be collected in an expanding bookCASE. The virtual format of this bookCASE makes evident that changes are underway in the practice of ethnography. Clicking the cases may link to straight-forward text, but you may also find yourself amidst audio or video files, photographs, artwork, and more.
         </p>
     </div>
 </div> <!-- /cases-container -->

@@ -12,10 +12,10 @@ get_header(); ?>
 				
 				<?php if (has_term('transcriptions','spheres') ) 
 					{ $thesphere = 'transcriptions'; transcription_header(); } else if (has_term('commonplaces','spheres') ) 
-					{ $thesphere = 'commonplaces'; commonplaces_header(); } else 
+					{ $thesphere = 'commonplaces'; commonplaces_header(); } else if (has_term('ethnographiccase','spheres') ) 
+					{ $thesphere = 'ethnographiccase'; ethnographiccase_header(); } else 
 					{ $thesphere = ''; echo $thesphere; } ?>
 				
-
 				<nav id="nav-above"  role="navigation">
 					<h1 class="section-heading"><?php _e( 'Post navigation', 'themename' ); ?></h1>
 					<div class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'themename' ) . '</span> %title' ); ?></div>
@@ -23,14 +23,7 @@ get_header(); ?>
 				</nav><!-- #nav-above -->
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
-					<header class="entry-header">
-						<span class="cats">
-						<?php 
-						foreach((get_the_category()) as $category) { 
-						    echo '<a href="' . get_category_link($category->cat_ID) . '" title="' . $category->cat_name . '" class="caticon cat-' . $category->cat_ID . '" />' . $category->cat_name . '</a>'; 
-						} 
-						?>
-						</span>
+					<header class="entry-header">						
 						<div class="publishdate">
 							<?php
 								printf( __( '<a href="%1$s" rel="bookmark"><time class="entry-date" datetime="%2$s">%3$s</time></a>', 'themename' ),
