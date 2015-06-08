@@ -80,30 +80,22 @@ get_header(); ?>
         clip-path: polygon(0% 23%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 100%);
     }
     .bg-case-2 {
-        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_mud.jpg");
-        
-        -webkit-clip-path: polygon(5% 16%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 5% 96%);
-        /*
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_mud.jpg");        
         -webkit-clip-path: url("#clip-svg-path2");
         clip-path: url("#clip-svg-path2");
-        -webkit-clip-path: polygon(0% 23%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 100%);
-        clip-path: polygon(0% 23%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 100%);
-        */
+        -webkit-clip-path: polygon(5% 16%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 5% 96%);
+        clip-path:         polygon(5% 16%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 5% 96%);
     }
-
 
     .case-bottom {
         background-color: #999;
         height: 66px;
         margin-left: 35px;
         width: 657px;
-
-        -webkit-clip-path: polygon(15% -58%, 0% 0%, 100% 0%, 88% 100%, 0% 100%, 0% 98%);
-/*
         -webkit-clip-path: url("#clip-svg-path-bottom");
         clip-path: url("#clip-svg-path-bottom");
-        -clip-path: polygon(15% -13%, 0% 0%, 100% 0%, 88% 100%, 0% 100%, 0% 98%);
-        */
+        -webkit-clip-path: polygon(15% -58%, 0% 0%, 100% 0%, 88% 100%, 0% 100%, 0% 98%);
+        -clip-path:        polygon(15% -58%, 0% 0%, 100% 0%, 88% 100%, 0% 100%, 0% 98%);
     }
     .spine {
         position: absolute;
@@ -127,6 +119,27 @@ get_header(); ?>
         max-width: 70%;
         pointer-events: none;
     }
+    .case-author {
+        font-family: "absarasans-regularregular", myriad-pro, "Myriad Pro", sans-serif;
+        font-size: 20px;
+        line-height: 28px;
+        z-index: 1;
+        color: white;
+        position: relative;
+        left: 120px;
+        margin: 0;
+        float: left;
+        max-width: 70%;
+        pointer-events: none;
+    }
+    .case-1 .case-author {
+        top: 200px;
+    }
+
+    .case-2 .case-author {
+        top: 130px;
+    }
+
     .case-description {
         background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_bottom.png");
         background-repeat: no-repeat;
@@ -199,7 +212,7 @@ get_header(); ?>
     
             <div class="case case-<?php echo $n ?>">
                 <div class="case-title"><?php echo $thetitle; ?></div>
-
+                <div class="case-author clearfix">by <?php coauthors() ?></div>
                 <div class="bg-case-<?php echo $n?>">
                     <div class="spine"></div>
                 </div>
@@ -230,11 +243,14 @@ get_header(); ?>
   <defs>
     <clipPath id="clip-svg-path1" clipPathUnits="objectBoundingBox">
       <polygon points="0 0.23, 0.14 0, 1 0, 1 0.78, 0.14 0.78, 0 1" />
-  </clipPath>
-  <clipPath id="clip-svg-path-bottom" clipPathUnits="objectBoundingBox">
-      <polygon points="0.15 -0.13 0 0, 1 0, 0.88 1, 0 1, 0 0.98" />
-  </clipPath>
-</defs>   
+    </clipPath>
+    <clipPath id="clip-svg-path2" clipPathUnits="objectBoundingBox">
+      <polygon points="0.05 0.16, 0.14 0, 1 0, 1 0.78, 0.14 0.78, 0.05 0.96" />
+    </clipPath>
+    <clipPath id="clip-svg-path-bottom" clipPathUnits="objectBoundingBox">
+      <polygon points="0.15 -0.58 0 0, 1 0, 0.88 1, 0 1, 0 0.98" />
+    </clipPath>
+  </defs>   
 </svg> 
 
 
