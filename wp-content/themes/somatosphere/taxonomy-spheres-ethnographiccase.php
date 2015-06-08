@@ -51,12 +51,12 @@ get_header(); ?>
     }
     .case-1 {
         height: 413px;
-        margin-bottom: -91px;
+        margin-bottom: -89px;
         /*margin-top: -10px;*/
     }
     .case-2 {
         height: 365px;
-        margin-bottom: -73px;
+        margin-bottom: -78px;
     }
     .case-3 {
         height: 326px;
@@ -79,17 +79,31 @@ get_header(); ?>
         -webkit-clip-path: polygon(0% 23%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 100%);
         clip-path: polygon(0% 23%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 100%);
     }
+    .bg-case-2 {
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_mud.jpg");
+        
+        -webkit-clip-path: polygon(5% 16%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 5% 96%);
+        /*
+        -webkit-clip-path: url("#clip-svg-path2");
+        clip-path: url("#clip-svg-path2");
+        -webkit-clip-path: polygon(0% 23%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 100%);
+        clip-path: polygon(0% 23%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 100%);
+        */
+    }
+
 
     .case-bottom {
         background-color: #999;
-        height: 91px;
-        margin-left: 1px;
-        width: 692px;
-        
+        height: 66px;
+        margin-left: 35px;
+        width: 657px;
+
+        -webkit-clip-path: polygon(15% -58%, 0% 0%, 100% 0%, 88% 100%, 0% 100%, 0% 98%);
+/*
         -webkit-clip-path: url("#clip-svg-path-bottom");
         clip-path: url("#clip-svg-path-bottom");
-        -webkit-clip-path: polygon(15% -13%, 0% 0%, 100% 0%, 88% 100%, 0% 100%, 0% 98%);
         -clip-path: polygon(15% -13%, 0% 0%, 100% 0%, 88% 100%, 0% 100%, 0% 98%);
+        */
     }
     .spine {
         position: absolute;
@@ -183,13 +197,12 @@ get_header(); ?>
         <a href="#">
     <?php } ?>
     
-            <div class="case case-<?php echo $n ?> grid effect-6">
-                <div class="case-title">
-                <?php echo $thetitle; ?>
-            </div>
+            <div class="case case-<?php echo $n ?>">
+                <div class="case-title"><?php echo $thetitle; ?></div>
 
-            <div class="bg-case-1">
-                <div class="spine"></div>
+                <div class="bg-case-<?php echo $n?>">
+                    <div class="spine"></div>
+                </div>
             </div>
         </a>
     <?php endwhile; ?>
