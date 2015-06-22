@@ -73,14 +73,14 @@ get_header(); ?>
         cursor: pointer;
     }
     .bg-case-1 {
-        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_books.jpg");
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_mud.jpg");        
         -webkit-clip-path: url("#clip-svg-path1");
         clip-path: url("#clip-svg-path1");
         -webkit-clip-path: polygon(0% 23%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 100%);
         clip-path: polygon(0% 23%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 100%);
     }
     .bg-case-2 {
-        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_mud.jpg");        
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_books.jpg");
         -webkit-clip-path: url("#clip-svg-path2");
         clip-path: url("#clip-svg-path2");
         -webkit-clip-path: polygon(5% 16%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 5% 96%);
@@ -102,7 +102,7 @@ get_header(); ?>
         background-color: #eee;
         width: 1px;
         height: 326px;
-        left: 94px;
+        left: 95px;
         z-index: 1;
     }
     .case-title {
@@ -133,11 +133,11 @@ get_header(); ?>
         pointer-events: none;
     }
     .case-1 .case-author {
-        top: 200px;
+        top: 160px;
     }
 
     .case-2 .case-author {
-        top: 130px;
+        top: 170px;
     }
 
     .case-description {
@@ -187,7 +187,7 @@ get_header(); ?>
     <div class="cases-container">
 
     <?php global $query_string; // required
-        query_posts($query_string.'&post_status=any&order=ASC&posts_per_page=-1'); 
+        query_posts($query_string.'&post_status=any&order=DESC&posts_per_page=-1'); 
         $n = 0; 
     ?>
 
