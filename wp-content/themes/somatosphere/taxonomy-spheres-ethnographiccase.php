@@ -61,16 +61,10 @@ get_header(); ?>
         margin-bottom: -78px;
     }
 
-    .case-2, .case-3 {
+    .case-2, .case-3, .case-4, .case-5, .case-6 {
         height: 400px;
         margin-bottom: -86px;
     }
-    /*
-    .case-3 {
-        height: 326px;
-        margin-bottom: -72px;
-    }
-    */
     div[class*="bg-case-"] {
         background-size: cover;
         width: 693px;
@@ -82,12 +76,20 @@ get_header(); ?>
         background-color: black;
     }
 
-    .bg-case-3:hover {
+    .bg-case-3:hover, .bg-case-6:hover {
         /* use linear gradient so we can offset bg */
         background: -webkit-linear-gradient(left, #000, #000) no-repeat 46px; /*Safari 5.1-6*/
         background: -o-linear-gradient(left,#000,#000) no-repeat 46px; /*Opera 11.1-12*/
         background: -moz-linear-gradient(left,#000,#000) no-repeat 46px; /*Fx 3.6-15*/
         background: linear-gradient(to left, #000, #000) no-repeat 46px; /*Standard*/
+    }
+
+    .bg-case-4:hover {
+        /* use linear gradient so we can offset bg */
+        background: -webkit-linear-gradient(left, #000, #000) no-repeat 18px; /*Safari 5.1-6*/
+        background: -o-linear-gradient(left,#000,#000) no-repeat 18px; /*Opera 11.1-12*/
+        background: -moz-linear-gradient(left,#000,#000) no-repeat 18px; /*Fx 3.6-15*/
+        background: linear-gradient(to left, #000, #000) no-repeat 18px; /*Standard*/
     }
 
     .bg-case-1 {
@@ -98,7 +100,7 @@ get_header(); ?>
         clip-path:         polygon(5% 16%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 5% 96%);
     }
 
-    .bg-case-2 {
+    .bg-case-2, .bg-case-5 {
         background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_mud.jpg");        
         -webkit-clip-path: url("#clip-svg-path2");
         clip-path: url("#clip-svg-path2");
@@ -106,14 +108,33 @@ get_header(); ?>
         clip-path: polygon(0% 22%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 99%);
     }
 
-    .bg-case-3 {
+    .bg-case-3, .bg-case-6 {
         background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_eye.jpg");
         background-position: 46px -60px;
         background-repeat: no-repeat;
         -webkit-clip-path: url("#clip-svg-path3");
         clip-path: url("#clip-svg-path3");
-        -webkit-clip-path: polygon(0% 23%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 100%);
-        clip-path: polygon(0% 23%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 100%);
+        -webkit-clip-path: polygon(0% 21%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 100%);
+        clip-path: polygon(0% 21%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 100%);
+    }
+
+
+    .bg-case-4 {
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_birch.jpg");
+        background-position: 18px -60px;
+        background-repeat: no-repeat;
+        -webkit-clip-path: url("#clip-svg-path4");
+        clip-path: url("#clip-svg-path4");
+        -webkit-clip-path:  polygon(0% 21%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 99%);
+        clip-path:          polygon(0% 21%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 99%);
+    }
+    
+    .bg-case-5 {
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_spectrum.jpg");        
+    }
+
+    .bg-case-6 {
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_paralysis.jpg");        
     }
 
     .case-bottom {
@@ -158,10 +179,10 @@ get_header(); ?>
         pointer-events: none;
     }
     .case-1 .case-author {
-        top: 136px;
+        top: 178px;
     }
 
-    .case-2 .case-author, .case-3 .case-author {
+    .case-2 .case-author, .case-3 .case-author, .case-4 .case-author, .case-5 .case-author, .case-6 .case-author {
         top: 184px;
     }
 
@@ -212,7 +233,7 @@ get_header(); ?>
     <div class="cases-container">
 
     <?php global $query_string; // required
-        query_posts($query_string.'&post_status=any&order=DESC&posts_per_page=-1'); 
+        query_posts($query_string.'&post_status=publish&order=DESC&posts_per_page=-1'); 
         $n = $wp_query->post_count + 1; //count down 
     ?>
 
@@ -273,7 +294,10 @@ get_header(); ?>
       <polygon points="0 0.22, 0.14 0, 1 0, 1 0.78, 0.14 0.78, 0 .99" />
     </clipPath>
     <clipPath id="clip-svg-path3" clipPathUnits="objectBoundingBox">
-      <polygon points="0 0.23, 0.14 0, 1 0, 1 0.78, 0.14 0.78, 0 1" />
+      <polygon points="0 0.21, 0.14 0, 1 0, 1 0.78, 0.14 0.78, 0 1" />
+    </clipPath>
+    <clipPath id="clip-svg-path4" clipPathUnits="objectBoundingBox">
+      <polygon points="0 0.21, 0.14 0, 1 0, 1 0.78, 0.14 0.78, 0 .99" />
     </clipPath>
   </defs>   
 </svg> 
