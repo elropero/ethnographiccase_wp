@@ -49,22 +49,16 @@ get_header(); ?>
     .case {
         width: 693px;
     }
-    /*
-    .case-1 {
-        height: 413px;
-        margin-bottom: -89px;
-    
-    }
-    */
-    .case-1 {
-        height: 340px;
-        margin-bottom: -78px;
-    }
 
-    .case-2, .case-3, .case-4, .case-5, .case-6 {
+    div[class*="container-case-"] {
         height: 400px;
         margin-bottom: -86px;
     }
+
+    div.container-case-1 {
+        margin-bottom: -88px;
+    }
+
     div[class*="bg-case-"] {
         background-size: cover;
         width: 693px;
@@ -84,7 +78,7 @@ get_header(); ?>
         background: linear-gradient(to left, #000, #000) no-repeat 46px; /*Standard*/
     }
 
-    .bg-case-4:hover {
+    .bg-case-1:hover, .bg-case-4:hover, .bg-case-8:hover {
         /* use linear gradient so we can offset bg */
         background: -webkit-linear-gradient(left, #000, #000) no-repeat 18px; /*Safari 5.1-6*/
         background: -o-linear-gradient(left,#000,#000) no-repeat 18px; /*Opera 11.1-12*/
@@ -92,20 +86,12 @@ get_header(); ?>
         background: linear-gradient(to left, #000, #000) no-repeat 18px; /*Standard*/
     }
 
-    .bg-case-1 {
-        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_books.jpg");
-        -webkit-clip-path: url("#clip-svg-path1");
-        clip-path: url("#clip-svg-path1");
-        -webkit-clip-path: polygon(5% 16%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 5% 96%);
-        clip-path:         polygon(5% 16%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 5% 96%);
-    }
-
-    .bg-case-2, .bg-case-5 {
+    .bg-case-2, .bg-case-5, .bg-case-7, .bg-case-9 {
         background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_mud.jpg");        
         -webkit-clip-path: url("#clip-svg-path2");
         clip-path: url("#clip-svg-path2");
-        -webkit-clip-path: polygon(0% 22%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 99%);
-        clip-path: polygon(0% 22%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 99%);
+        -webkit-clip-path: polygon(0% 21%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 99%);
+        clip-path: polygon(0% 21%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 99%);
     }
 
     .bg-case-3, .bg-case-6 {
@@ -114,12 +100,12 @@ get_header(); ?>
         background-repeat: no-repeat;
         -webkit-clip-path: url("#clip-svg-path3");
         clip-path: url("#clip-svg-path3");
-        -webkit-clip-path: polygon(0% 21%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 100%);
-        clip-path: polygon(0% 21%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 100%);
+        -webkit-clip-path: polygon(0% 21%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 99%);
+        clip-path: polygon(0% 21%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 99%);
     }
 
 
-    .bg-case-4 {
+    .bg-case-1, .bg-case-4, .bg-case-8 {
         background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_birch.jpg");
         background-position: 18px -60px;
         background-repeat: no-repeat;
@@ -129,6 +115,10 @@ get_header(); ?>
         clip-path:          polygon(0% 21%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 99%);
     }
     
+    .bg-case-1 {
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_books.jpg");
+    }
+
     .bg-case-5 {
         background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_spectrum.jpg");        
     }
@@ -137,11 +127,27 @@ get_header(); ?>
         background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_paralysis.jpg");        
     }
 
+    .bg-case-7 {
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_humvee.png");        
+    }
+
+    .bg-case-8 {
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_map.jpg");        
+    }
+
+    .bg-case-9 {
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_court.jpg");        
+    }
+
     .case-bottom {
         background-color: #999;
-        height: 66px;
-        margin-left: 35px;
-        width: 657px;
+        height: 68px;
+        margin-left: 0px;
+        width: 693px;
+        -webkit-clip-path: polygon(0% 122%, 14% 0%, 100% 0%, 89% 100%, 14% 100%, 0% 100%);
+        -clip-path: polygon(0% 122%, 14% 0%, 100% 0%, 89% 100%, 14% 100%, 0% 100%);
+        -webkit-clip-path: url("#clip-svg-path-bottom");
+        clip-path: url("#clip-svg-path-bottom");
     }
     .spine {
         position: absolute;
@@ -151,6 +157,12 @@ get_header(); ?>
         left: 95px;
         z-index: 1;
     }
+
+    .content-container {
+        position: relative;
+        height: 100%;
+    }
+
     .case-title {
         font-family: "absarasans-boldregular", myriad-pro, "Myriad Pro", sans-serif;
         font-size: 36px;
@@ -162,7 +174,7 @@ get_header(); ?>
         left: 120px;
         margin: 0;
         float: left;
-        max-width: 70%;
+        max-width: 80%;
         pointer-events: none;
     }
     .case-author {
@@ -171,19 +183,13 @@ get_header(); ?>
         line-height: 28px;
         z-index: 1;
         color: white;
-        position: relative;
+        position: absolute;
         left: 120px;
+        bottom: 100px;
         margin: 0;
         float: left;
         max-width: 70%;
         pointer-events: none;
-    }
-    .case-1 .case-author {
-        top: 178px;
-    }
-
-    .case-2 .case-author, .case-3 .case-author, .case-4 .case-author, .case-5 .case-author, .case-6 .case-author {
-        top: 184px;
     }
 
     .case-description {
@@ -197,6 +203,7 @@ get_header(); ?>
         font-family: "absarasans-regularregular", myriad-pro, "Myriad Pro", sans-serif;
         font-size: 16px;
         line-height: 24px;
+        top: 64px;
     }
 
 
@@ -256,11 +263,13 @@ get_header(); ?>
         <a href="#">
     <?php } ?>
     
-            <div class="case case-<?php echo $n ?>">
-                <div class="case-title"><?php echo $thetitle; ?></div>
-                <div class="case-author clearfix">by <?php coauthors() ?></div>
-                <div class="bg-case-<?php echo $n?>">
-                    <div class="spine"></div>
+            <div class="case container-case-<?php echo $n ?>">
+                <div class="content-container">
+                    <div class="case-title"><?php echo $thetitle; ?></div>
+                    <div class="case-author">by <?php coauthors() ?></div>
+                    <div class="bg-case-<?php echo $n?>">
+                        <div class="spine"></div>
+                    </div>
                 </div>
             </div>
         </a>
@@ -287,18 +296,23 @@ get_header(); ?>
 <!-- SVG clip paths -->
 <svg height=0 width=0>
   <defs>
-    <clipPath id="clip-svg-path1" clipPathUnits="objectBoundingBox">
-      <polygon points="0.05 0.16, 0.14 0, 1 0, 1 0.78, 0.14 0.78, 0.05 0.96" />
-    </clipPath>
     <clipPath id="clip-svg-path2" clipPathUnits="objectBoundingBox">
-      <polygon points="0 0.22, 0.14 0, 1 0, 1 0.78, 0.14 0.78, 0 .99" />
+      <polygon points="0 0.21, 0.14 0, 1 0, 1 0.78, 0.14 0.78, 0 .99" />
     </clipPath>
     <clipPath id="clip-svg-path3" clipPathUnits="objectBoundingBox">
-      <polygon points="0 0.21, 0.14 0, 1 0, 1 0.78, 0.14 0.78, 0 1" />
+      <polygon points="0 0.21, 0.14 0, 1 0, 1 0.78, 0.14 0.78, 0 .99" />
     </clipPath>
     <clipPath id="clip-svg-path4" clipPathUnits="objectBoundingBox">
       <polygon points="0 0.21, 0.14 0, 1 0, 1 0.78, 0.14 0.78, 0 .99" />
     </clipPath>
+    <clipPath id="clip-svg-path4" clipPathUnits="objectBoundingBox">
+      <polygon points="0 0.21, 0.14 0, 1 0, 1 0.78, 0.14 0.78, 0 .99" />
+    </clipPath>
+    <clipPath id="clip-svg-path-bottom" clipPathUnits="objectBoundingBox">
+      <polygon points="0 1.22, 0.14 0, 1 0, .89 1, 0.14 1, 0 1" />
+    </clipPath>
+
+    (0% 122%, 14% 0%, 100% 0%, 89% 100%, 14% 100%, 0% 100%);
   </defs>   
 </svg> 
 

@@ -1,4 +1,4 @@
-<?php define('WP_CACHE', true);
+<?php 
 
 /**
  * The base configurations of the WordPress.
