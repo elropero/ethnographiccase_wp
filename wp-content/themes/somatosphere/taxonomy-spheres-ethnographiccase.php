@@ -60,7 +60,7 @@ get_header(); ?>
     }
 
     div[class*="bg-case-"] {
-        background-size: cover;
+        /*background-size: cover;*/
         width: 693px;
         height: 100%;
     }
@@ -70,7 +70,7 @@ get_header(); ?>
         background-color: black;
     }
 
-    .bg-case-3:hover, .bg-case-6:hover {
+    .bg-case-3:hover, .bg-case-6:hover, .bg-case-10:hover, .bg-case-13:hover {
         /* use linear gradient so we can offset bg */
         background: -webkit-linear-gradient(left, #000, #000) no-repeat 46px; /*Safari 5.1-6*/
         background: -o-linear-gradient(left,#000,#000) no-repeat 46px; /*Opera 11.1-12*/
@@ -78,7 +78,7 @@ get_header(); ?>
         background: linear-gradient(to left, #000, #000) no-repeat 46px; /*Standard*/
     }
 
-    .bg-case-1:hover, .bg-case-4:hover, .bg-case-8:hover {
+    .bg-case-1:hover, .bg-case-4:hover, .bg-case-8:hover, .bg-case-11:hover {
         /* use linear gradient so we can offset bg */
         background: -webkit-linear-gradient(left, #000, #000) no-repeat 18px; /*Safari 5.1-6*/
         background: -o-linear-gradient(left,#000,#000) no-repeat 18px; /*Opera 11.1-12*/
@@ -86,7 +86,7 @@ get_header(); ?>
         background: linear-gradient(to left, #000, #000) no-repeat 18px; /*Standard*/
     }
 
-    .bg-case-2, .bg-case-5, .bg-case-7, .bg-case-9 {
+    .bg-case-2, .bg-case-5, .bg-case-7, .bg-case-9, .bg-case-12 {
         background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_mud.jpg");        
         -webkit-clip-path: url("#clip-svg-path2");
         clip-path: url("#clip-svg-path2");
@@ -94,7 +94,7 @@ get_header(); ?>
         clip-path: polygon(0% 21%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 99%);
     }
 
-    .bg-case-3, .bg-case-6 {
+    .bg-case-3, .bg-case-6, .bg-case-10, .bg-case-13 {
         background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_eye.jpg");
         background-position: 46px -60px;
         background-repeat: no-repeat;
@@ -105,7 +105,7 @@ get_header(); ?>
     }
 
 
-    .bg-case-1, .bg-case-4, .bg-case-8 {
+    .bg-case-1, .bg-case-4, .bg-case-8, .bg-case-11, .bg-case-14 {
         background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_birch.jpg");
         background-position: 18px -60px;
         background-repeat: no-repeat;
@@ -138,6 +138,22 @@ get_header(); ?>
     .bg-case-9 {
         background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_court.jpg");        
     }
+    .bg-case-10 {
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_roots.jpg");
+    }
+    .bg-case-11 {
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_sperm.jpg");
+    }
+    .bg-case-12 {
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_bare.png");
+    }
+    .bg-case-13 {
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_sense.jpg");
+    }
+    .bg-case-14 {
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_swamp.jpg");
+        background-position-y: -60px;
+    }
 
     .case-bottom {
         background-color: #999;
@@ -148,6 +164,7 @@ get_header(); ?>
         -clip-path: polygon(0% 122%, 14% 0%, 100% 0%, 89% 100%, 14% 100%, 0% 100%);
         -webkit-clip-path: url("#clip-svg-path-bottom");
         clip-path: url("#clip-svg-path-bottom");
+        opacity: 0;
     }
     .spine {
         position: absolute;
@@ -160,6 +177,7 @@ get_header(); ?>
 
     .content-container {
         position: relative;
+        z-index: 0;
         height: 100%;
     }
 
@@ -205,7 +223,6 @@ get_header(); ?>
         line-height: 24px;
         top: 64px;
     }
-
 
     .bracket-container {
         position: absolute;
