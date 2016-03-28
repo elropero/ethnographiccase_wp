@@ -82,7 +82,10 @@ register_nav_menus( array(
 	'transcriptionsseries' => __( 'Transcriptions Series', 'themename' ),
 	'commonplacesmenu' => __( 'Commonplaces Menu', 'themename' ),
 	'commonplacescats' => __( 'Commonplaces Categories', 'themename' ),
-	'commonplacesseries' => __( 'Commonplaces Series', 'themename' )
+	'commonplacesseries' => __( 'Commonplaces Series', 'themename' ),
+	'ethnographiccasemenu' => __( 'The Ethnographic Case Menu', 'themename' ),
+	'ethnographiccasecats' => __( 'The Ethnographic Case Categories', 'themename' ),
+	'ethnographiccaseseries' => __( 'The Ethnographic Case Series', 'themename' )
 ) );
 
 /** 
@@ -147,6 +150,14 @@ function handcraftedwp_widgets_init() {
 		'before_title' => '<h4 class="widget-title">',
 		'after_title' => '</h4>',
 	) );
+	register_sidebar( array (
+		'name' => __( 'The Ethnographic Case', 'themename' ),
+		'id' => 'ethnographiccase',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s" role="complementary">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	) );
 }
 add_action( 'init', 'handcraftedwp_widgets_init' );
 
@@ -181,6 +192,7 @@ if (!current_user_can('manage_options')) {
 	add_action('wp_dashboard_setup', 'remove_dashboard_widgets' );
 	add_action("admin_menu","themename_configure_menu_page"); //While we're add it, let's configure the menu options as well
 } 
+
 
 
 
@@ -364,8 +376,12 @@ function sphere_rewrite_rules( $wp_rewrite )
 		'c/(.+)/(.+)' => 'index.php?spheres=' . $wp_rewrite->preg_index(1) . '&category_name=' .$wp_rewrite->preg_index(2),
 		'commonplaces/page/(.+)' => 'index.php?spheres=commonplaces&paged=' .$wp_rewrite->preg_index(1),
 		'commonplaces/(.+)' => 'index.php?spheres=commonplaces&category_name=' .$wp_rewrite->preg_index(1),
-		'commonplaces' => 'index.php?spheres=commonplaces'
-		
+		'commonplaces' => 'index.php?spheres=commonplaces',
+		's/ethnographiccase/page/(.+)' => 'index.php?spheres=ethnographiccase&paged=' .$wp_rewrite->preg_index(1),
+		//'s/(.+)/(.+)' => 'index.php?spheres=' . $wp_rewrite->preg_index(1) . '&category_name=' .$wp_rewrite->preg_index(2),
+		'ethnographiccase/page/(.+)' => 'index.php?spheres=ethnographiccase&paged=' .$wp_rewrite->preg_index(1),
+		'ethnographiccase/(.+)' => 'index.php?spheres=ethnographiccase&category_name=' .$wp_rewrite->preg_index(1),
+		'ethnographiccase' => 'index.php?spheres=ethnographiccase'
 	);
 	$wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
 }
@@ -401,12 +417,14 @@ function term_id_class($classes) {
 	} else if (is_tax('spheres','Commonplaces')) {
 		$classes[] = 'sphere-commonplaces';
 		$classes[] = 'sphere-test';
+	} else if (is_tax('spheres','The Ethnographic Case')) {
+		$classes[] = 'sphere-ethnographiccase';
+		$classes[] = 'sphere-test';
 	} else if ($term1->parent == 477) {
 		$classes[] = 'sphere-transcriptions';
 		$classes[] = 'sphere-test2';
 	} else {
-		$classes[] = 'sphere-'.$wp_query->query_vars['spheres'];
-		
+		$classes[] = 'sphere-'.$wp_query->query_vars['spheres'];	
 	}
 	return $classes;
 }
@@ -435,6 +453,12 @@ function create_commonplacesfeed() {
 load_template( TEMPLATEPATH . '/feed/commonplaces-feed.php'); // You'll create a your-custom-feed.php file in your theme's directory
 }
 add_action('do_feed_commonplacesfeed', 'create_commonplacesfeed', 10, 1);
+
+function create_ethnographiccasefeed() {
+load_template( TEMPLATEPATH . '/feed/ethnographiccase-feed.php'); // You'll create a your-custom-feed.php file in your theme's directory
+}
+add_action('do_feed_ethnographiccasefeed', 'create_ethnographiccasefeed', 10, 1);
+
 
 function pa_in_taxonomy($tax, $term, $_post = NULL) {
 	// if neither tax nor term are specified, return false
@@ -492,6 +516,33 @@ function commonplaces_header() {
 </header>
 <?php
 }
+function ethnographiccase_index_header() {
+?>
+<header class="sphere-header">	
+	<a href="http://somatosphere.net/ethnographiccase"><img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/case_logo.png"></a>
+</header>
+<?php
+}
+function ethnographiccase_post_header() {
+?>
+<header class="sphere-header">
+	<div class="aboveline">
+		<h1 class="sphere-title">
+			<a href="http://somatosphere.net/ethnographiccase">The Ethnographic Case</a>	
+		</h1>
+		<h2 class="sphere-subtitle">
+			<?php echo term_description(1107,'spheres') ?>
+		</h2>
+		<div class="sphere-back"></div>
+	</div>
+<!--	<div class="belowline">
+		<div class="sphere-tagline">Some Info</div>
+		<?php // wp_nav_menu( array( 'theme_location' => 'virosphere' ) ); ?>
+	</div>-->
+</header>
+<?php
+}
+
 // Q: how to interecpt categories on sphere, perhaps make custom widget that add sphere in url before category and/or tag
 
 
