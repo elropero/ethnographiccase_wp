@@ -70,7 +70,7 @@ get_header(); ?>
         background-color: black;
     }
 
-    .bg-case-3:hover, .bg-case-6:hover, .bg-case-10:hover, .bg-case-13:hover {
+    .bg-case-3:hover, .bg-case-6:hover, .bg-case-10:hover, .bg-case-13:hover, .bg-case-15:hover, .bg-case-18:hover, .bg-case-20:hover {
         /* use linear gradient so we can offset bg */
         background: -webkit-linear-gradient(left, #000, #000) no-repeat 46px; /*Safari 5.1-6*/
         background: -o-linear-gradient(left,#000,#000) no-repeat 46px; /*Opera 11.1-12*/
@@ -78,7 +78,7 @@ get_header(); ?>
         background: linear-gradient(to left, #000, #000) no-repeat 46px; /*Standard*/
     }
 
-    .bg-case-1:hover, .bg-case-4:hover, .bg-case-8:hover, .bg-case-11:hover {
+    .bg-case-1:hover, .bg-case-4:hover, .bg-case-8:hover, .bg-case-11:hover, .bg-case-14:hover, .bg-case-17:hover, .bg-case-21:hover {
         /* use linear gradient so we can offset bg */
         background: -webkit-linear-gradient(left, #000, #000) no-repeat 18px; /*Safari 5.1-6*/
         background: -o-linear-gradient(left,#000,#000) no-repeat 18px; /*Opera 11.1-12*/
@@ -86,7 +86,7 @@ get_header(); ?>
         background: linear-gradient(to left, #000, #000) no-repeat 18px; /*Standard*/
     }
 
-    .bg-case-2, .bg-case-5, .bg-case-7, .bg-case-9, .bg-case-12 {
+    .bg-case-2, .bg-case-5, .bg-case-7, .bg-case-9, .bg-case-12, .bg-case-16, .bg-case-19, .bg-case-22 {
         background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_mud.jpg");        
         -webkit-clip-path: url("#clip-svg-path2");
         clip-path: url("#clip-svg-path2");
@@ -94,7 +94,7 @@ get_header(); ?>
         clip-path: polygon(0% 21%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 99%);
     }
 
-    .bg-case-3, .bg-case-6, .bg-case-10, .bg-case-13 {
+    .bg-case-3, .bg-case-6, .bg-case-10, .bg-case-13, .bg-case-15, .bg-case-18, .bg-case-20 {
         background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_eye.jpg");
         background-position: 46px -60px;
         background-repeat: no-repeat;
@@ -105,7 +105,7 @@ get_header(); ?>
     }
 
 
-    .bg-case-1, .bg-case-4, .bg-case-8, .bg-case-11, .bg-case-14 {
+    .bg-case-1, .bg-case-4, .bg-case-8, .bg-case-11, .bg-case-14, .bg-case-17, .bg-case-21 {
         background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_birch.jpg");
         background-position: 18px -60px;
         background-repeat: no-repeat;
@@ -117,6 +117,9 @@ get_header(); ?>
     
     .bg-case-1 {
         background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_books.jpg");
+    }
+    .bg-case-2 {
+        background-size: 100%;
     }
 
     .bg-case-5 {
@@ -154,7 +157,37 @@ get_header(); ?>
         background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_swamp.jpg");
         background-position-y: -60px;
     }
-
+    .bg-case-15 {
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_family.jpg");
+        background-size: cover;
+    }
+    .bg-case-16 {
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_polygraphic.jpg");
+        background-size: 100%;
+    }
+    .bg-case-17 {
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_river.jpg");
+    }
+    .bg-case-18 {
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_cake.png");
+        background-size: cover;
+    }
+    .bg-case-19 {
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_beach.jpg");
+        background-size: cover;   
+    }
+    .bg-case-20 {
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_legal.jpg");
+        background-size: 100% 105%;
+    }
+    .bg-case-21 {
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_shed.jpg");        
+        background-size: 100% 110%;
+    }
+    .bg-case-22 {
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_bricks.jpg");        
+        background-size: 100% 110%;
+    }
     .case-bottom {
         background-color: #999;
         height: 68px;
