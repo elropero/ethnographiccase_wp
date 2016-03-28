@@ -70,7 +70,7 @@ get_header(); ?>
         background-color: black;
     }
 
-    .bg-case-3:hover, .bg-case-6:hover, .bg-case-10:hover, .bg-case-13:hover, .bg-case-15:hover, .bg-case-18:hover, .bg-case-20:hover {
+    .bg-case-3:hover, .bg-case-6:hover, .bg-case-10:hover, .bg-case-13:hover, .bg-case-15:hover, .bg-case-18:hover, .bg-case-20:hover, .bg-case-23:hover {
         /* use linear gradient so we can offset bg */
         background: -webkit-linear-gradient(left, #000, #000) no-repeat 46px; /*Safari 5.1-6*/
         background: -o-linear-gradient(left,#000,#000) no-repeat 46px; /*Opera 11.1-12*/
@@ -94,7 +94,7 @@ get_header(); ?>
         clip-path: polygon(0% 21%, 14% 0%, 100% 0%, 100% 78%, 14% 78%, 0% 99%);
     }
 
-    .bg-case-3, .bg-case-6, .bg-case-10, .bg-case-13, .bg-case-15, .bg-case-18, .bg-case-20 {
+    .bg-case-3, .bg-case-6, .bg-case-10, .bg-case-13, .bg-case-15, .bg-case-18, .bg-case-20, .bg-case-23 {
         background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_eye.jpg");
         background-position: 46px -60px;
         background-repeat: no-repeat;
@@ -188,6 +188,11 @@ get_header(); ?>
         background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_bricks.jpg");        
         background-size: 100% 110%;
     }
+    .bg-case-23 {
+        background-image: url("<?php echo get_template_directory_uri(); ?>/img/case_balloons.jpg");
+        background-size: 100% 110%;
+    }
+
     .case-bottom {
         background-color: #999;
         height: 68px;
